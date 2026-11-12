@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="color-scheme" content="dark">
+<meta name="theme-color" content="#0b0d26">
+<title>City of Windows Support</title>
+<meta name="description" content="Help, FAQ and contact for the City of Windows app.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Figtree:wght@400;600&family=JetBrains+Mono:wght@500&display=swap">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="sky" aria-hidden="true">
+  <svg viewBox="0 0 800 84" preserveAspectRatio="none">
+    <path d="M0 84V50h40v-14h30v24h40V20h50v40h30V44h40v-26h24l20-16 20 16v66h30V34h60v50h40V30h44v-8h20v62h50V40h40v44h40V48h60v36Z" fill="#150f2b"/>
+    <g fill="#ffbf6b"><rect x="120" y="30" width="8" height="10"/><rect x="232" y="52" width="8" height="10"/><rect x="420" y="40" width="8" height="10"/><rect x="560" y="58" width="8" height="10"/></g>
+    <g fill="#dce6ff"><rect x="304" y="44" width="10" height="8"/><rect x="486" y="34" width="8" height="10"/></g>
+  </svg>
+</div>
+<main class="wrap">
+  <header>
+    <p class="eyebrow">Support</p>
+    <h1>City of <em>Windows</em></h1>
+    <p>A calm musical puzzle game set in night-time London. Every lit window plays a note.</p>
+    <nav>
+      <a href="./" aria-current="page">Support</a>
+      <a href="privacy.html">Privacy policy</a>
+      <a href="terms.html">Terms of use</a>
+    </nav>
+  </header>
+  <section id="support">
+    <h2>Support</h2>
+    <p>Questions, a bug, or an idea for a new stop on the route? Email me and I'll reply as soon as I can.</p>
+    <div class="contact">
+      <code id="email">ar7urik@hotmail.com</code>
+      <button type="button" id="copy">Copy email</button>
+    </div>
+    <p class="note" id="copyNote" aria-live="polite"></p>
+
+    <h3>I can't hear anything</h3>
+    <p>Turn your volume up and tap any window. City of Windows plays sound even when the silent switch is on. If you use Bluetooth headphones, check they're connected.</p>
+    <h3>How do I solve a stop?</h3>
+    <p>Press <strong>Listen</strong> to hear the tune. The street lamps flash on each beat, which shows you which column each note is in. Lower floors play lower notes. Light the windows you think match, then press <strong>Check</strong>: right windows glow gold, wrong ones flash red, and a lamp marks steps that still need a note.</p>
+    <h3>How do I share a tune?</h3>
+    <p>In Free play, press <strong>Tune code</strong> and send the code to a friend. They paste it in Free play to hear exactly what you made.</p>
+    <h3>Where is my progress saved?</h3>
+    <p>Only on your device. If you delete the app, your stars and saved tunes are deleted too.</p>
+  </section>
+<script>
+document.getElementById('copy').addEventListener('click', () => {
+  const el = document.getElementById('email'), note = document.getElementById('copyNote');
+  const fallback = () => { const r = document.createRange(); r.selectNodeContents(el); const s = getSelection(); s.removeAllRanges(); s.addRange(r); note.textContent = 'Selected. Copy it with Ctrl+C or \u2318C.'; };
+  try { navigator.clipboard.writeText(el.textContent).then(() => { note.textContent = 'Email copied.'; }, fallback); } catch (e) { fallback(); }
+});
+</script>
+  <footer><p class="meta">City of Windows is made in London by Artur Lozovski.</p></footer>
+</main>
+</body>
+</html>

@@ -1,0 +1,38 @@
+/* City of Windows: support, privacy and terms pages.
+   Layout: one readable column on the game's night sky, a skyline band at the top. Dark-only, like the game. */
+:root{
+  --night:#0b0d26;
+  --panel:#141842;
+  --line:rgba(255,236,210,.14);
+  --ink:#f3efe6;
+  --muted:#b3b1cf;
+  --amber:#ffc46b;
+  --display:"Instrument Serif","Iowan Old Style",Georgia,serif;
+  --body:"Figtree",system-ui,-apple-system,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,Menlo,monospace;
+  color-scheme:dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{background:var(--night);color:var(--ink);font:16px/1.6 var(--body);margin:0}
+.sky{height:120px;background:linear-gradient(#141244,#3a2350 70%,#7a3e57);position:relative;overflow:hidden}
+.sky svg{position:absolute;left:0;right:0;bottom:0;width:100%;height:84px}
+.wrap{max-width:44rem;margin:0 auto;padding-top:0;padding-bottom:64px;padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
+header{padding-top:40px;padding-bottom:8px}
+.eyebrow{font:500 12px var(--mono);letter-spacing:.14em;text-transform:uppercase;color:var(--amber);margin:0}
+h1{font:400 clamp(44px,9vw,72px)/1 var(--display);margin:10px 0 12px;text-wrap:balance}
+h1 em{color:var(--amber)}
+h2{font:400 34px/1.1 var(--display);margin:44px 0 8px;text-wrap:balance}
+h3{font-size:17px;margin:24px 0 4px}
+p,li{color:var(--muted);max-width:65ch}
+p strong,li strong{color:var(--ink)}
+a{color:var(--amber)}
+nav{display:flex;gap:18px;flex-wrap:wrap;margin-top:12px;font-weight:600}
+nav a[aria-current="page"]{color:var(--ink);text-decoration:none}
+.contact{display:flex;flex-wrap:wrap;align-items:center;gap:10px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:14px 16px;margin-top:12px}
+.contact code{font:500 15px var(--mono);color:var(--ink);user-select:all;word-break:break-all}
+button{font:600 14px var(--body);background:var(--amber);color:#22140a;border:0;border-radius:10px;padding:9px 14px;cursor:pointer}
+button:focus-visible,a:focus-visible{outline:2px solid var(--amber);outline-offset:2px}
+.note{font-size:14px;min-height:1.4em;margin:6px 0 0}
+.meta{font:500 12px var(--mono);color:var(--muted);letter-spacing:.04em}
+footer{border-top:1px solid var(--line);margin-top:48px;padding-top:16px}
